@@ -84,10 +84,6 @@ const config: Config = {
       id: "60218113",
     },
     {
-      name: "codejuration",
-      id: "25116716",
-    },
-    {
       name: "lucecarter",
       id: "199566394",
     },
@@ -112,10 +108,6 @@ const config: Config = {
       id: "260151116",
     },
     {
-      name: "lukeocodes",
-      id: "415867772",
-    },
-    {
       name: "matty_twoshoes",
       id: "556670211",
     },
@@ -134,6 +126,10 @@ const config: Config = {
     {
       name: "sadmoody",
       id: "28493092",
+    },
+    {
+      name: "shyruparel",
+      id: "52698945",
     },
     {
       name: "sketchni",
