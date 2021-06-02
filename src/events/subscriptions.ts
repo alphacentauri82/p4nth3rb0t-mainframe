@@ -3,7 +3,8 @@ import WebSocketServer from "../WebSocketServer";
 import { tmi } from "./../tmi";
 import { Userstate } from "tmi.js";
 import UserManager from "../users/UserManager";
-import { MainframeEvent, SubPacket } from "p4nth3rb0t-types";
+import { MainframeEvent, SubPacket } from "@whitep4nth3r/p4nth3rb0t-types";
+import Moods, { sendMoodChangeEvent } from "./moods";
 
 export const sendSubEvent = async (
   userId: string,
@@ -23,8 +24,8 @@ export const sendSubEvent = async (
     const logoUrl =
       giftRecipient !== null ? giftRecipient.users[0].logo : user.logo;
 
-    const subEvent: SubPacket = {  
-      event:  MainframeEvent.sub,
+    const subEvent: SubPacket = {
+      event: MainframeEvent.sub,
       id: messageId,
       data: {
         logoUrl,
@@ -36,6 +37,11 @@ export const sendSubEvent = async (
     };
 
     WebSocketServer.sendData(subEvent);
+
+    setTimeout(async () => {
+      const newRandomMood: string = Moods.getRandomNewMood();
+      await sendMoodChangeEvent(newRandomMood, Date.now().toString());
+    }, 3500);
   } catch (error) {
     console.log(error);
   }
@@ -141,7 +147,6 @@ tmi.on(
     userstate: Userstate,
     methods: {},
   ) => {
-    console.log("resub", userstate);
     sendSubEvent(
       userstate["user-id"] as string,
       userstate["display-name"] as string,
