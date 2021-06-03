@@ -97,16 +97,12 @@ const config: Config = {
       id: "25347823",
     },
     {
-      name: "exegeteio",
-      id: "40856022",
+      name: "finitesingularity",
+      id: "536397236",
     },
     {
       name: "gacbl",
       id: "120572949",
-    },
-    {
-      name: "laylacodesit",
-      id: "260151116",
     },
     {
       name: "matty_twoshoes",
@@ -123,10 +119,6 @@ const config: Config = {
     {
       name: "ryantupo",
       id: "158165150",
-    },
-    {
-      name: "ryan_the_rhg",
-      id: "154364425",
     },
     {
       name: "sadmoody",
@@ -159,6 +151,10 @@ const config: Config = {
     {
       name: "aurorasmadhouse",
       id: "132113595",
+    },
+    {
+      name: "ukmadlz",
+      id: "109561494",
     },
   ],
   teamWelcomeMessage: (channel: TwitchChannel): string => {
